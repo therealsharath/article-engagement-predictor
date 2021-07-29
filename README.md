@@ -1,8 +1,10 @@
-# Introduction:
+# Article Engagement Predictor
+
+## Introduction:
 
 The New York Times is an American newspaper that is widely regarded as one of the popular and well-established news sources in the world. Over the past few years, user engagement has steadily grown leading to stronger online opinions as well as the need to classify and measure the sort of engagement on articles. By predicting the public response, the newspaper can give more targeted articles which will draw in more readers and keep the public well informed and engaged about critical current events in the world. To do so, we will use an open-source dataset of 16,000 New York Times articles and 5 million corresponding comments, with over 30 features to examine. 
 
-# Problem Definition:
+## Problem Definition:
 
 Given various features of a New York Times article as inputs, the goal of our project is to generate an overall **engagement metric**. This engagement metric can provide editors with necessary insight and feedback on their writing to gauge the audience reaction before they publicly publish their article.
 
@@ -11,15 +13,15 @@ Given various features of a New York Times article as inputs, the goal of our pr
 * Output of the second model: Forecasted average sentiment magnitude
 * Final output: Engagement metric (calculated through a weighted sum of the number of comments and the magnitude of the sentiment that the article is forecasted to receive)
 
-# Data
+## Data
 The actual dataset can be downloaded from Kaggle (https://www.kaggle.com/benjaminawd/new-york-times-articles-comments-2020), and we demonstrated the main part of our preprocessing model in the preprocessing section below. These are two CSV files from Kaggle, articles.csv and comments.csv. These are linked through unique IDs which correspond to the info about articles and the individual comments corresponding to each comment. 
 * Article columns - newsdesk, section, subsection, material, headline, abstract, keyword, word count, publish date, number comments, link ID
 * Comment columns - comment ID, status, user ID, flagged, trusted, comment body, link ID
 
 ![material](images/ny_times.PNG)
 
-# Project Flow / Methods
-## Preprocessing
+## Project Flow / Methods
+### Preprocessing
 
 :heavy_check_mark:**Data Cleaning:**
 * Removing incomplete features that don’t have data points for every column
@@ -68,7 +70,7 @@ which is more semantically useful for our model. When all these preprocessing me
 [`nyt-comments-2020-dropped-sample-cleaned-sentiment.csv`](https://drive.google.com/file/d/1VUxMTKd7UgP-4SXd0T1vjqywWKWMuxEh/view)
 
 
-## Prediction of Number of Words and Sentiment ##
+### Prediction of Number of Words and Sentiment ##
 **Workflow Diagram:**
 The data processing and prediction pipeline is shown below to better illustrate the steps taken to reach our predictions.\
 ![flow](images/flow.png)
@@ -131,15 +133,15 @@ The engagement metric is the final qualitative result intended for the New York 
 * Abstract = 'For one thing, you are leading the race for the top draft pick. But seriously, even finishing at 0-16 can yield valuable resilience. So says Hue Jackson, who coached the winless 2017 Cleveland Browns.'
 The model's ouptut predicted there to be 12 comments, predicted sentiment to be 0.179, so the final engagement metric as 2.1700. Note that this sample article has a slightly lower expected engagement response than the political article. 
 
-# Discussion:
+## Discussion:
 
 By analyzing and predicting the number of comments anticipated for an article, the publishers can determine the level of public interest in a given topic and can choose to follow up with corresponding related articles. Additionally, the sentiment analysis allows  the editors to determine how polarizing an article is, and potentially provide items such as blog posts to provide a forum for further public discussion. Low sentiment can tell the editor that perhaps the article should be revised to make it more engaging.
 
-# Conclusions:
+## Conclusions:
 
 Through the course of this project, we have used transformers models as well as two XGBoost models in order to attempt to accurately predict viewer engagement for any given article with a header and abstract. This tool would be incredibly useful for not only New York Times, but theoretically any other newspaper in order to determine which target articles would bring the most success. By passing articles through the pipeline described in the project above, and validifying the models do indeed predict engagement with acceptable loss as shown in results, we have effectively created a way for NYT to visualize response to articles before publishing. 
 
-# Contributions:
+## Contributions:
 * Ashish - preprocessed data, constructed whole preprocessing/data pipeline and streamlined it for efficiency
 * Varun - built the two XGBoost models and did preprocessing using ML, provided ideas for data preprocessing
 * Sharath - preprocessed all data, did background research about the problem
@@ -147,7 +149,7 @@ Through the course of this project, we have used transformers models as well as 
 * Yash - provided ideas for data preprocessing, created data visualizations, identified background research about the dataset and which features to use
 
 
-# References:
+## References:
 
 Tsagkias, M., Weerkamp, W., & De Rijke, M. (2009, November). Predicting the volume of comments on online news stories. In Proceedings of the 18th ACM conference on Information and knowledge management (pp. 1765-1768).
 
