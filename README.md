@@ -144,7 +144,7 @@ Through the course of this project, we have used transformers models as well as 
 ## Contributions:
 * Ashish - preprocessed data, constructed whole preprocessing/data pipeline and streamlined it for efficiency
 * Varun - built the two XGBoost models and did preprocessing using ML, provided ideas for data preprocessing
-* Sharath - preprocessed all data, did background research about the problem
+* Sharath - preprocessed all data, did background research about the problem, assisted in developing data pipeline for processing
 * Nishant - created word embeddings for all textual data, helped develop data pipeline for preprocessing + ML models
 * Yash - provided ideas for data preprocessing, created data visualizations, identified background research about the dataset and which features to use
 
